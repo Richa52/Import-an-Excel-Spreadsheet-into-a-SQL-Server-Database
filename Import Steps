@@ -1,0 +1,101 @@
+http://www.66pacific.com/sql_server_import_from_excel.aspx
+
+1. Enter the data into an Excel spreadsheet
+
+First, enter the data into an Excel spreadsheet.
+In this example, the default spreadsheet name, Sheet1, has been retained, but if you rename the sheet (to the name you want for the table in the database, for example), that name will be automatically used in the import process (at Step 6).
+Small demonstration Excel spreadsheet ready for transfer to a SQL database
+Excel spreadsheet ready to export to a SQL table.
+
+ 
+
+2. Start the SQL Import and Export Wizard
+
+Next,  open Microsoft SQL Server 2014/Select database/ DB Name / rightclick -> Tasks / Import or Export Data.
+The Welcome page appears. Click Next.
+SQL Import and Export Wizard in the Windows Start menu
+Windows menu showing SQL Server Import and Export Wizard
+
+Welcome page of the SQL Server Import and Export Wizard
+
+ 
+
+3. Chose your Excel spreadsheet as the Data Source
+
+In the Data Source dropdown of the Choose a Data Source page, select Microsoft Excel.
+In the Excel file path box, specify the file path to the Excel spreadsheet.
+Select the the version in the Excel version dropdown.
+Make sure that First row has column names is checked.
+Click Next.
+Chose a Data Source page in the SQL Server Import and Export Wizard
+
+
+
+ 
+
+4. Chose your SQL database as the destination
+
+In the Destination dropdown list, accept the default setting of SQL Server Native Client 10.0.
+In the Server name dropdown list, enter the name of the server. The example is a remote server, so the IP address and port of the server were specified.
+Chose the Authentication type. The example is a remote server, so SQL Server authentication, with a user name and password, is required.
+In the Database dropdown list, select or type the name of the database.
+Click Next.
+Chose a Data Destination page in the SQL Server Import and Export Wizard
+
+ 
+
+5. Specify how to copy the data
+
+The default option, Copy data from one or more tables or views, works for this example.
+If you want to try the second option, Write a query to specify the data to transfer, the following lolcode snippet may be instructive:
+CAN HAS SQL? 
+DBASE IZ GETDB('db/demo.db') 
+FUNNAHS IZ DBUCKET(&DBASE&,"CAN I PLZ GET * ALL UP IN lollit") 
+IM IN UR FUNNAHS ITZA TITLE 
+    VOTEZ IZ &TITLE#ups& - &TITLE#downs&
+
+Click Next.
+ Specify Table Copy or Query page in the SQL Server Import and Export Wizard
+
+ 
+
+6. Select the source tables and views
+
+The default settings as shown work in this example.
+In the Destination column, you can specify a different name for the table in the SQL database if you choose.
+Click Preview to see how your data will appear in the destination table.
+You can click Edit Mappings to change how your data is assigned at the destination table, but it shouldn't be necessary in this example since you entered the data into the Excel spreadsheet yourself.
+Click Next.
+Select Source Tables and Views page in the SQL Server Import and Export Wizard
+
+
+
+ 
+
+7. Run the "Package"
+
+The following message appears at the bottom of the Run Package page: In SQL Server Express, Web, or Workgroup, you can run the package that the Import and Export Wizard creates, but cannot save it. To save packages that the wizard creates, you must upgrade to SQL Server Standard, Enterprise, Developer or Evaluation. A "package" is all of the settings that your have configured so far. In the commercial versions of SQL Server, you can save the package for reuse so you don't have to enter all of the settings the next time you run the wizard. In the Express (free) version of Microsoft SQL Server 2008 Management Studio, you must re-enter all of the settings every time you run the SQL Server Import and Export wizard.
+
+Click Next.
+Run Package page in the SQL Server Import and Export Wizard
+
+ 
+
+8. Verify that the package executed successfuly
+
+Click Report to view useful information about the data transfer process.
+Click Close.
+The execution was successful page in the SQL Server Import and Export Wizard
+
+ 
+
+9. View the new table in SQL Server Management Studio
+
+View your new table by opening Microsoft SQL Server 2008 Management Studio at Start / All Programs / Microsoft SQL Server 2008/ Import and Export Data.
+The new table, dbo.Sheet1$, in Microsoft SQL Server Management Studio
+Successfully imported table in SQL Server Management Studio
+
+You can also use the Import and Export Wizard to export data from a table in SQL Server to an Excel spreadsheet.
+
+.
+
